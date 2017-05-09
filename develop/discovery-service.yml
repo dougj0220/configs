@@ -21,7 +21,9 @@ eureka:
 endpoints:
   health:
     sensitive: false
-
+management:
+  security:
+    enabled: false
 # Hystrix (defaults: coreSize=10, timeout.enabled=true)
 hystrix:
   threadpool:
