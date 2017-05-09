@@ -48,6 +48,6 @@ server:
 
 logging:
   level:
-    ROOT: DEBUG
+    ROOT: INFO
 hello:
   world: hello world from remote origin app.yml
