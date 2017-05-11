@@ -1,6 +1,6 @@
 spring:
   application:
-    name: order-service  # Service registers under this name
+    name: event-service  # Service registers under this name
   cloud:
     stream:
       bindings:
@@ -28,3 +28,5 @@ endpoints:
 logging:
   level:
     ROOT: INFO
+server:
+  port: 8082
