@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: order-service  # Service registers under this name
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: timerTopic
+          content-type: application/json
+          group: timerGroup
+      kafka:
+        bindings:
+          input:
+            consumer:
+              resetOffsets: true
+# Discovery Server Access
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:8761}/eureka/
+
+# Spring Actuator
+endpoints:
+  health:
+    sensitive: false
+logging:
+  level:
+    ROOT: INFO
