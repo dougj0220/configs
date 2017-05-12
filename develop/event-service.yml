@@ -1,18 +1,22 @@
 spring:
   application:
     name: event-service  # Service registers under this name
-  cloud:
-    stream:
-      bindings:
-        input:
-          destination: timerTopic
-          content-type: application/json
-          group: timerGroup
-      kafka:
-        bindings:
-          input:
-            consumer:
-              resetOffsets: true
+  #cloud:
+    #stream:
+      #bindings:
+        #input:
+          #destination: timerTopic
+          #content-type: application/json
+          #group: timerGroup
+      #kafka:
+        #bindings:
+          #input:
+            #consumer:
+              #resetOffsets: true
+kafka:
+  bootstrap-servers: localhost:9092
+  topic:
+    order-json: order.t
 # Discovery Server Access
 eureka:
   instance:

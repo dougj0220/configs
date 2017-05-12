@@ -17,17 +17,20 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5Dialect
-  cloud:
-    stream:
-      bindings:
-        output:
-          destination: timerTopic
-          content-type: application/json
+  #cloud:
+    #stream:
+      #bindings:
+        #output:
+          #destination: timerTopic
+          #content-type: application/json
      #kafka:
         #binder:
           #zkNodes: kafka
           #brokers: kafka
-
+kafka:
+  bootstrap-servers: localhost:9092
+  topic:
+    order-json: order.t
 # Discovery Server Access
 eureka:
   instance:
