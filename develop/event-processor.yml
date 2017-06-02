@@ -1,6 +1,21 @@
 spring:
   application:
-    name: event-service  # Service registers under this name
+    name: event-processor  # Service registers under this name
+  datasource:
+    url: jdbc:mysql://localhost:3306/bhn
+    username: bhn
+    password: password
+    driverClassName: com.mysql.jdbc.Driver
+    testWhileIdle: true
+    validationQuery: SELECT 1
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
   #cloud:
     #stream:
       #bindings:
@@ -33,4 +48,4 @@ logging:
   level:
     ROOT: INFO
 server:
-  port: 8082
+  port: 8083

@@ -14,7 +14,7 @@ endpoints:
 
 zuul:
   routes:
-    order-service: /order/**
+    command-service: /command/**
     api-gateway: /api/**
   ignored-services: '*'
 
