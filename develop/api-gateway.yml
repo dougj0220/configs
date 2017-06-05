@@ -15,6 +15,7 @@ endpoints:
 zuul:
   routes:
     command-service: /command/**
+    query-service: /query/**
     api-gateway: /api/**
   ignored-services: '*'
 
